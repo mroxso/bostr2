@@ -1,0 +1,10 @@
+services:
+  server:
+    build:
+      context: .
+      target: final
+    command: ["--configfile", "/etc/config/config.yaml"]
+    ports:
+      - 8081:8080
+    volumes:
+      - ${PWD}/config.yaml:/etc/config/config.yaml
